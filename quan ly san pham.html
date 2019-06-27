@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="add" value="" >
+    <button type="button" onclick="them(document.getElementById('add').value)"> Thêm </button>
+    <br>
+    <p id="show"></p>
+    <br>
+    <script>
+        let ds_san_pham=['but', 'may tinh', 'chuot', 'ban chai', 'quan', 'ao'];
+        let s="'";
+        function hien_thi() {
+            for (let i=0;i<ds_san_pham.length;i++){
+                let stt=i+1;
+                document.getElementById('show').innerHTML+='<p>'+stt+' '+ ds_san_pham[i]+' '+
+                    '<button type="button" onclick="sua('+ i +')"> Sửa </button>' +
+                    '<button type="button" onclick="xoa('+ i +')"> Xóa </button>' + '<br>'+'</p>';
+            }
+        }
+
+        function them(x) {
+            ds_san_pham.push(x);
+            document.getElementById('show').innerHTML='<p></p>';
+            hien_thi();
+            alert("Đã thêm sản phẩm "+x);
+        }
+
+        function sua(x) {
+            let y=prompt("Nhap ten muon sua: ");
+            alert("San pham "+ds_san_pham[x]+ " da doi ten thanh "+y);
+            ds_san_pham[x]=y;
+            document.getElementById('show').innerHTML='<p></p>';
+            hien_thi();
+        }
+        function xoa(x) {
+            alert('Da xoa san pham '+ds_san_pham[x]);
+            ds_san_pham.splice(x,1);
+            document.getElementById('show').innerHTML='<p></p>';
+            hien_thi();
+        }
+        hien_thi();
+    </script>
+</body>
+</html>
