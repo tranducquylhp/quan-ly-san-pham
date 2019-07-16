@@ -16,7 +16,6 @@
             font-weight: bold;
         }
         td {
-            text-align: left;
             padding: 8px;
             text-align: center;
         }
@@ -31,7 +30,7 @@
     </style>
 </head>
 <body>
-<h2>Add new product</h2>
+    <h2>Add new product</h2>
     <br>
     <input id="add" value="" >
     <button type="button" onclick="them(document.getElementById('add').value)"> Add </button>
@@ -40,7 +39,7 @@
     <br>
     <script>
         let ds_san_pham=['but', 'may tinh', 'chuot', 'ban chai', 'quan', 'ao'];
-        let s="'";
+
         function hien_thi() {
             let hienThi = "<table>";
             hienThi += "<th><h2>Products Name</h2></th>";
@@ -70,12 +69,14 @@
             document.getElementById('show').innerHTML='<p></p>';
             hien_thi();
         }
+
         function xoa(x) {
             alert('Da xoa san pham '+ds_san_pham[x]);
             ds_san_pham.splice(x,1);
             document.getElementById('show').innerHTML='<p></p>';
             hien_thi();
         }
+
         hien_thi();
     </script>
 </body>
