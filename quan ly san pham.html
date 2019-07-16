@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        table, td,tr {
-            border: 1px solid;
-            padding: 20px;
-        }
-        tr,td{
+        table {
+            border-collapse: collapse;
+            width: 50%;
             text-align: center;
         }
+
+        th{
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+        td {
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
         button{
-            color: red;
-            width: 200px;
+            color: white;
+            width: 60px;
+            background-color: green;
         }
     </style>
 </head>
