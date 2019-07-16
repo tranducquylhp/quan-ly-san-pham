@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table, td,tr {
+            border: 1px solid;
+            padding: 20px;
+        }
+        tr,td{
+            text-align: center;
+        }
+        button{
+            color: red;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
+<h2>Add new product</h2>
+    <br>
     <input id="add" value="" >
-    <button type="button" onclick="them(document.getElementById('add').value)"> Thêm </button>
+    <button type="button" onclick="them(document.getElementById('add').value)"> Add </button>
     <br>
     <p id="show"></p>
     <br>
@@ -15,12 +30,14 @@
         let s="'";
         function hien_thi() {
             let hienThi = "<table>";
-            hienThi += "<th>Products Name</th>";
+            hienThi += "<th><h2>Products Name</h2></th>";
+
+            hienThi += "<tr><td>Numerical Order</td>    <td>Products Name</td>   <td>Edit Products</td>   <td>Delete Products</td></tr>";
             for (let i=0;i<ds_san_pham.length;i++){
                 let stt=i+1;
                 hienThi+='<tr><td>'+stt+'</td>'+'<td>' + ds_san_pham[i]+'</td>'+
-                    '<td><button type="button" onclick="sua('+ i +')"> Sửa </button></td>' +
-                    '<td><button type="button" onclick="xoa('+ i +')"> Xóa </button></td></tr>';
+                    '<td><button type="button" onclick="sua('+ i +')"> Edit </button></td>' +
+                    '<td><button type="button" onclick="xoa('+ i +')"> Delete </button></td></tr>';
             }
             hienThi+='</table>';
             document.getElementById("show").innerHTML = hienThi;
